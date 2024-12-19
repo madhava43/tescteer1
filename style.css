@@ -38,7 +38,7 @@
     padding: 15px 40px;
     background: #1D17B2;
     color: #fff;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
     font-family: 'FT Regola Neue', sans-serif;
