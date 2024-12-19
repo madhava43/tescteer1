@@ -1,0 +1,286 @@
+/* Import Custom Fonts */
+@font-face {
+    font-family: 'Area';
+    src: url('fonts/Area-Regular.woff2') format('woff2'),
+         url('fonts/Area-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Louize Display';
+    src: url('fonts/LouizeDisplay-Regular.woff2') format('woff2'),
+         url('fonts/LouizeDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FT Regola Neue';
+    src: url('fonts/FTRegolaNeue-Regular.woff2') format('woff2'),
+         url('fonts/FTRegolaNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #1D17B2;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'FT Regola Neue', sans-serif;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #74DEF0;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(270deg, #74DEF0, #1D17B2);
+    background-size: 400% 400%;
+    animation: gradientBG 8s infinite;
+    color: #fff;
+    font-family: 'Louize Display', serif;
+    overflow: hidden; /* Prevent overlay spill */
+}
+
+/* Dot Pattern Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffffff 5%, transparent 6%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    animation: dotMove 8s linear infinite;
+    z-index: 1; /* Layer below content */
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure text is above the dot pattern */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-family: 'Area', sans-serif;
+}
+
+.btn {
+    padding: 12px 24px;
+    background-color: #ffcb05;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e6a800;
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background: #74DEF0;
+    color: #1D17B2;
+    font-family: 'Louize Display', serif;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Area', sans-serif;
+}
+
+/* Services Section */
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    text-align: center;
+    background: #1D17B2; /* Persian Blue */
+    color: #74DEF0; /* Spray */
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: #74DEF0; /* Spray */
+    color: #1D17B2; /* Persian Blue */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ensures consistent image dimensions */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background: #1D17B2;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dotMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
